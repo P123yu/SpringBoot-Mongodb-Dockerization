@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    networks:
+      - my-mongo-net
+
+  mongo-basic-crud:
+    image: piyush12singh/mongo-basic-crud-img:latest
+    ports:
+      - "9002:8080"
+    networks:
+      - my-mongo-net
+
+networks:
+  my-mongo-net:
+    driver: bridge
