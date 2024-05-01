@@ -1,0 +1,11 @@
+// pull mongo image
+docker pull mongo
+
+// create network
+docker network create my-mongo-net
+
+// add mongo image to network
+docker run --network my-mongo-net --name mongodb mongo
+
+// add spring image to network
+docker run -p 9002:8080 --network my-mongo-net piyush12singh/mongo-basic-crud-img:latest
