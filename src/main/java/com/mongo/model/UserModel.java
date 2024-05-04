@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class UserModel {
     @MongoId
-    private Long userId;
+    private String userId;
     private String usrName;
     private String usrAddress;
     private LocalDate userDob;
